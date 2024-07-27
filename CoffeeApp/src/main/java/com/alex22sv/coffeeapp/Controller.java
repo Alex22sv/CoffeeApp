@@ -53,7 +53,7 @@ public class Controller {
     public void failedOperation(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error!");
-        alert.setHeaderText("The operation resulted in an unexpected error.");
+        alert.setHeaderText("The operation resulted in an unexpected error. Please contact your administrator.");
         alert.showAndWait();
     }
     @FXML
@@ -76,7 +76,7 @@ public class Controller {
     public void idNotFound(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("ID not found, please contact your administrator.");
+        alert.setHeaderText("ID not found.");
         alert.showAndWait();
     }
 }
