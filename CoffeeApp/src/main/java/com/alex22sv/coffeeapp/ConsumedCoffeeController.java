@@ -86,17 +86,21 @@ public class ConsumedCoffeeController extends Controller{
     public void updateCoffeeBrandOptions(){
         try{
             addConsumedCoffeeBrand.getItems().clear();
+            updateConsumedCoffeeBrand.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM CoffeeBrand");
             while(resultSet.next()){
                 if(!resultSet.getString("coffeeBrandName").toLowerCase().equals("none")){
                     addConsumedCoffeeBrand.getItems().add(resultSet.getString("coffeeBrandName"));
+                    updateConsumedCoffeeBrand.getItems().add(resultSet.getString("coffeeBrandName"));
                 }
 
             }
             addConsumedCoffeeBrand.getItems().add("None");
+            updateConsumedCoffeeBrand.getItems().add("None");
             addConsumedCoffeeBrand.setValue("None");
+            updateConsumedCoffeeBrand.setValue("None");
             connection.close();
         } catch(SQLException e){
             e.printStackTrace();
@@ -110,7 +114,7 @@ public class ConsumedCoffeeController extends Controller{
             try{
                 Connection connection = DatabaseConnection.getConnection();
                 Integer coffeeBrandId = null;
-                if((!addConsumedCoffeeBrand.getValue().equals("None"))){
+                if((!addConsumedCoffeeBrand.getValue().toLowerCase().equals("none"))){
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("SELECT coffeeBrandId FROM CoffeeBrand WHERE coffeeBrandName = '" + addConsumedCoffeeBrand.getValue() + "'");
                     resultSet.next();
@@ -118,7 +122,7 @@ public class ConsumedCoffeeController extends Controller{
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ConsumedCoffee (`coffeeName`, `coffeeBrandId`, `consumedCoffeeDate`) VALUES (?, ?, ?)");
                 preparedStatement.setString(1, addConsumedCoffeeName.getText());
-                if(addConsumedCoffeeBrand.getValue().equals("None")){
+                if(addConsumedCoffeeBrand.getValue().toLowerCase().equals("none")){
                     preparedStatement.setNull(2, Types.INTEGER);
                 } else {
                     preparedStatement.setInt(2, coffeeBrandId);
@@ -129,10 +133,9 @@ public class ConsumedCoffeeController extends Controller{
                 addConsumedCoffeeName.clear();
                 addConsumedCoffeeBrand.setValue("None");
                 addConsumedCoffeeDate.setValue(null);
+                connection.close();
                 updateTable();
                 successfullOperation();
-                connection.close();
-
             } catch(SQLException e){
                 e.printStackTrace();
                 failedOperation();
@@ -146,8 +149,84 @@ public class ConsumedCoffeeController extends Controller{
     }
     // Update consumed coffee
     @FXML
+    private void updateConsumedCoffeeGetOldValues(){
+        if(!updateConsumedCoffeeId.getText().isEmpty()){
+            try {
+                if(Utilities.existsConsumedCoffee(Integer.valueOf(updateConsumedCoffeeId.getText()))){
+                    Connection connection = DatabaseConnection.getConnection();
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM ConsumedCoffee WHERE consumedCoffeeId = " + updateConsumedCoffeeId.getText());
+                    if(resultSet.next()){
+                        String coffeeBrandName = "None";
+                        if(resultSet.getString("coffeeBrandId")!=null){
+                            Statement statement1 = connection.createStatement();
+                            ResultSet resultSet1 = statement1.executeQuery("SELECT coffeeBrandName FROM CoffeeBrand WHERE coffeeBrandId = " + resultSet.getInt("coffeeBrandId"));
+                            if(resultSet1.next()){
+                                coffeeBrandName = resultSet1.getString("coffeeBrandName");
+                            }
+                        }
+                        updateConsumedCoffeeName.setText(resultSet.getString("coffeeName"));
+                        updateCoffeeBrandOptions();
+                        updateConsumedCoffeeBrand.setValue(coffeeBrandName);
+                        updateConsumedCoffeeDate.setValue(resultSet.getDate("consumedCoffeeDate").toLocalDate());
+                    }
+                    connection.close();
+                } else {
+                    idNotFound();
+                }
+            } catch (SQLException e){
+                e.printStackTrace();
+                failedOperation();
+            } catch(NumberFormatException e){
+                typeError();
+            }
+        } else {
+            emptyOperation();
+        }
+    }
+    @FXML
     private void updateConsumedCoffee(){
+        if( (!updateConsumedCoffeeId.getText().isEmpty()) && (!updateConsumedCoffeeName.getText().isEmpty()) && (updateConsumedCoffeeBrand.getValue()!=null) && (updateConsumedCoffeeDate.getValue()!=null)){
+           try {
+               if(Utilities.existsConsumedCoffee(Integer.valueOf(updateConsumedCoffeeId.getText()))){
+                   Connection connection = DatabaseConnection.getConnection();
+                   Integer coffeeBrandId = null;
+                   if((!updateConsumedCoffeeBrand.getValue().toLowerCase().equals("none"))){
+                       Statement statement = connection.createStatement();
+                       ResultSet resultSet = statement.executeQuery("SELECT coffeeBrandId FROM CoffeeBrand WHERE coffeeBrandName = '" + updateConsumedCoffeeBrand.getValue() + "'");
+                       resultSet.next();
+                       coffeeBrandId = resultSet.getInt("coffeeBrandId");
+                   }
+                   PreparedStatement preparedStatement = connection.prepareStatement("UPDATE ConsumedCoffee SET coffeeName = ?, coffeeBrandId = ?, consumedCoffeeDate = ? WHERE consumedCoffeeId = ?");
+                   preparedStatement.setString(1, updateConsumedCoffeeName.getText());
+                   if(updateConsumedCoffeeBrand.getValue().toLowerCase().equals("none")){
+                       preparedStatement.setNull(2, Types.INTEGER);
+                   } else {
+                       preparedStatement.setInt(2, coffeeBrandId);
+                   }
+                   preparedStatement.setDate(3, java.sql.Date.valueOf(updateConsumedCoffeeDate.getValue()));
+                   preparedStatement.setInt(4, Integer.valueOf(updateConsumedCoffeeId.getText()));
+                   preparedStatement.executeUpdate();
+                   updateConsumedCoffeeId.clear();
+                   updateConsumedCoffeeName.clear();
+                   updateConsumedCoffeeBrand.setValue("None");
+                   updateConsumedCoffeeDate.setValue(null);
+                   connection.close();
+                   updateTable();
+                   successfullOperation();
+               } else {
+                   idNotFound();
+               }
+           } catch (SQLException e){
+               e.printStackTrace();
+               failedOperation();
+           } catch(NumberFormatException e){
+               typeError();
+           }
 
+        } else {
+            emptyOperation();
+        }
     }
     // Delete consumed coffee
     @FXML
@@ -159,8 +238,9 @@ public class ConsumedCoffeeController extends Controller{
                     PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM ConsumedCoffee WHERE consumedCoffeeId = ?");
                     preparedStatement.setInt(1, Integer.valueOf(deleteConsumedCoffeeId.getText()));
                     preparedStatement.executeUpdate();
-                    updateTable();
                     deleteConsumedCoffeeId.clear();
+                    connection.close();
+                    updateTable();
                     successfullOperation();
                 } else {
                     idNotFound();
