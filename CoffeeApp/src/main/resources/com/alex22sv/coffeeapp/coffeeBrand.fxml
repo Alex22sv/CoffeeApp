@@ -129,31 +129,51 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Coffee Brands" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-            <font>
-                <Font size="42.0" />
-            </font>
-        </Label>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="88.0" layoutY="116.0" mnemonicParsing="false" onAction="#openMainMenu" style="-fx-background-color: none;" text="Home" textFill="WHITE">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="156.0" mnemonicParsing="false" onAction="#openConsumedCoffees" style="-fx-background-color: none;" text="Consumed Coffees" textFill="WHITE">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="196.0" mnemonicParsing="false" onAction="#openCoffeeBrands" style="-fx-background-color: none;" text="Coffee Brands" textFill="WHITE">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Button>
         <Label fx:id="appVersion" layoutX="14.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="V1.0.0" textFill="WHITE">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Coffee Brands" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="42.0" />
+            </font>
+        </Label>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="104.0" mnemonicParsing="false" onAction="#openMainMenu" style="-fx-background-color: none;" text="Home" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="144.0" mnemonicParsing="false" onAction="#openConsumedCoffees" style="-fx-background-color: none;" text="Consumed Coffees" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="184.0" mnemonicParsing="false" onAction="#openCoffeeBrands" style="-fx-background-color: none;" text="Coffee Brands" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="224.0" mnemonicParsing="false" onAction="#openMonthlyReport" style="-fx-background-color: none;" text="Monthly report" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="264.0" mnemonicParsing="false" onAction="#openYearlyReport" style="-fx-background-color: none;" text="Yearly report" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="304.0" mnemonicParsing="false" onAction="#openDownloadDB" style="-fx-background-color: none;" text="Download" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="344.0" mnemonicParsing="false" onAction="#openAuditLog" style="-fx-background-color: none;" text="Audit log" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
       <ScrollPane layoutX="295.0" layoutY="376.0" prefHeight="379.0" prefWidth="881.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="875.0">

@@ -1,17 +1,11 @@
 package com.alex22sv.coffeeapp;
 
-import com.alex22sv.coffeeapp.Classes.Config;
-import com.alex22sv.coffeeapp.Classes.ConsumedCoffee;
-import com.alex22sv.coffeeapp.Classes.DatabaseConnection;
-import com.alex22sv.coffeeapp.Classes.Utilities;
+import com.alex22sv.coffeeapp.Classes.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import jdk.jshell.execution.Util;
 
 import java.sql.*;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class ConsumedCoffeeController extends Controller{
     // Add consumed coffee
@@ -135,9 +129,11 @@ public class ConsumedCoffeeController extends Controller{
                 addConsumedCoffeeDate.setValue(null);
                 connection.close();
                 updateTable();
+                Utilities.logAction(AuditLogAction.ADDED_CONSUMED_COFFEE);
                 successfullOperation();
             } catch(SQLException e){
                 e.printStackTrace();
+                Utilities.logAction(AuditLogAction.FAILED_TO_ADD_CONSUMED_COFFEE);
                 failedOperation();
             } catch(NumberFormatException e){
                 typeError();
@@ -214,12 +210,14 @@ public class ConsumedCoffeeController extends Controller{
                    updateConsumedCoffeeDate.setValue(null);
                    connection.close();
                    updateTable();
+                   Utilities.logAction(AuditLogAction.UPDATED_CONSUMED_COFFEE);
                    successfullOperation();
                } else {
                    idNotFound();
                }
            } catch (SQLException e){
                e.printStackTrace();
+               Utilities.logAction(AuditLogAction.FAILED_TO_UPDATE_CONSUMED_COFFEE);
                failedOperation();
            } catch(NumberFormatException e){
                typeError();
@@ -243,12 +241,14 @@ public class ConsumedCoffeeController extends Controller{
                     deleteConsumedCoffeeId.clear();
                     connection.close();
                     updateTable();
+                    Utilities.logAction(AuditLogAction.DELETED_CONSUMED_COFFEE);
                     successfullOperation();
                 } else {
                     idNotFound();
                 }
             } catch (SQLException e){
                 e.printStackTrace();
+                Utilities.logAction(AuditLogAction.FAILED_TO_DELETE_CONSUMED_COFFEE);
                 failedOperation();
             } catch(NumberFormatException e){
                 typeError();
