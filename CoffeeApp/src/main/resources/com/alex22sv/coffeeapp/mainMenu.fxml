@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.MainMenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.MainMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e42a6" height="799.0" stroke="BLACK" strokeType="INSIDE" width="271.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="9.0" prefHeight="62.0" prefWidth="230.0" text="Coffee App" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
@@ -14,17 +14,17 @@
             <Font size="38.0" />
          </font>
       </Label>
-      <Label layoutX="299.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="User: ae22mp">
+      <Label fx:id="databaseUsername" layoutX="299.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="User: -">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="600.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Server: localhost">
+      <Label fx:id="databaseServer" layoutX="600.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Server: -">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="865.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Database: CoffeeApp">
+      <Label fx:id="databaseName" layoutX="865.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Database: -">
          <font>
             <Font size="18.0" />
          </font>
@@ -49,7 +49,7 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <Label layoutX="14.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="V1.0.0" textFill="WHITE">
+      <Label fx:id="appVersion" layoutX="14.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="V1.0.0" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
