@@ -207,6 +207,7 @@ public class ConsumedCoffeeController extends Controller{
                    preparedStatement.setDate(3, java.sql.Date.valueOf(updateConsumedCoffeeDate.getValue()));
                    preparedStatement.setInt(4, Integer.valueOf(updateConsumedCoffeeId.getText()));
                    preparedStatement.executeUpdate();
+                   // Clear items
                    updateConsumedCoffeeId.clear();
                    updateConsumedCoffeeName.clear();
                    updateConsumedCoffeeBrand.setValue("None");
@@ -238,6 +239,7 @@ public class ConsumedCoffeeController extends Controller{
                     PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM ConsumedCoffee WHERE consumedCoffeeId = ?");
                     preparedStatement.setInt(1, Integer.valueOf(deleteConsumedCoffeeId.getText()));
                     preparedStatement.executeUpdate();
+                    // Clear items
                     deleteConsumedCoffeeId.clear();
                     connection.close();
                     updateTable();
@@ -275,7 +277,7 @@ public class ConsumedCoffeeController extends Controller{
                 }
             }
             connection.close();
-        }catch (SQLException e){
+        } catch (SQLException e){
             e.printStackTrace();
             failedOperation();
         }
