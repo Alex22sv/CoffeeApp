@@ -5,9 +5,11 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,6 +18,22 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.ConsumedCoffeeController">
    <children>
+      <ScrollPane layoutX="295.0" layoutY="376.0" prefHeight="379.0" prefWidth="881.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="881.0">
+               <children>
+                  <TableView fx:id="consumedCoffeeTableView" prefHeight="379.0" prefWidth="881.0">
+                    <columns>
+                      <TableColumn fx:id="consumedCoffeeIdColumn" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="consumedCoffeeNameColumn" prefWidth="374.0" text="Name" />
+                        <TableColumn fx:id="consumedCoffeeBrandColumn" prefWidth="272.0" text="Coffee Brand" />
+                        <TableColumn fx:id="consumedCoffeeDateColumn" prefWidth="158.0" text="Date" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
       <HBox layoutX="298.0" layoutY="91.0" prefHeight="274.0" prefWidth="881.0">
          <children>
             <VBox prefHeight="271.0" prefWidth="293.0" style="-fx-border-color: BLACK;">
@@ -154,14 +172,6 @@
             <Font size="42.0" />
          </font>
       </Label>
-      <TableView fx:id="consumedCoffeeTableView" layoutX="298.0" layoutY="386.0" prefHeight="371.0" prefWidth="881.0">
-        <columns>
-          <TableColumn fx:id="consumedCoffeeIdColumn" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="consumedCoffeeNameColumn" prefWidth="374.0" text="Name" />
-            <TableColumn fx:id="consumedCoffeeBrandColumn" prefWidth="272.0" text="Coffee Brand" />
-            <TableColumn fx:id="consumedCoffeeDateColumn" prefWidth="158.0" text="Date" />
-        </columns>
-      </TableView>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="88.0" layoutY="116.0" mnemonicParsing="false" onAction="#openMainMenu" style="-fx-background-color: none;" text="Home" textFill="WHITE">
          <font>
             <Font size="22.0" />
