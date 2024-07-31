@@ -1,13 +1,9 @@
 package com.alex22sv.coffeeapp;
 
-import com.alex22sv.coffeeapp.Classes.CoffeeBrand;
-import com.alex22sv.coffeeapp.Classes.Config;
-import com.alex22sv.coffeeapp.Classes.DatabaseConnection;
-import com.alex22sv.coffeeapp.Classes.Utilities;
+import com.alex22sv.coffeeapp.Classes.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import jdk.jshell.execution.Util;
 
 import java.sql.*;
 
@@ -60,7 +56,9 @@ public class CoffeeBrandController extends Controller {
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Update table
+        // Audit log
+        Utilities.logAction(AuditLogAction.OPENED_COFFEE_BRAND);
+        // Update table view
         updateTable();
     }
     // Add coffee brand
@@ -76,9 +74,11 @@ public class CoffeeBrandController extends Controller {
                 addCoffeeBrandName.clear();
                 connection.close();
                 updateTable();
+                Utilities.logAction(AuditLogAction.ADDED_COFFEE_BRAND);
                 successfullOperation();
             } catch(SQLException e){
                 e.printStackTrace();
+                Utilities.logAction(AuditLogAction.FAILED_TO_ADD_COFFEE_BRAND);
                 failedOperation();
             } catch(NumberFormatException e){
                 typeError();
@@ -128,10 +128,12 @@ public class CoffeeBrandController extends Controller {
                     updateCoffeeBrandName.clear();
                     connection.close();
                     updateTable();
+                    Utilities.logAction(AuditLogAction.UPDATED_COFFEE_BRAND);
                     successfullOperation();
                 }
             } catch (SQLException e){
                 e.printStackTrace();
+                Utilities.logAction(AuditLogAction.FAILED_TO_UPDATE_COFFEE_BRAND);
                 failedOperation();
             } catch(NumberFormatException e){
                 typeError();
@@ -155,12 +157,14 @@ public class CoffeeBrandController extends Controller {
                     deleteCoffeeBrandId.clear();
                     connection.close();
                     updateTable();
+                    Utilities.logAction(AuditLogAction.DELETED_COFFEE_BRAND);
                     successfullOperation();
                 } else {
                     idNotFound();
                 }
             } catch (SQLException e){
                 e.printStackTrace();
+                Utilities.logAction(AuditLogAction.FAILED_TO_DELETE_COFFEE_BRAND);
                 failedOperation();
             } catch(NumberFormatException e){
                 typeError();

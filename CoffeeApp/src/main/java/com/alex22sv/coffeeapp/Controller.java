@@ -25,6 +25,22 @@ public class Controller {
         changeScene(event, "coffeeBrand.fxml", "Coffee App - Coffee Brands");
     }
     @FXML
+    private void openMonthlyReport(ActionEvent event){
+
+    }
+    @FXML
+    private void openYearlyReport(ActionEvent event){
+
+    }
+    @FXML
+    private void openDownloadDB(ActionEvent event){
+
+    }
+    @FXML
+    private void openAuditLog(ActionEvent event){
+        changeScene(event, "auditLog.fxml", "Coffee App - Audit Log");
+    }
+    @FXML
     private void exitApplication(ActionEvent event) {
         Platform.exit();
     }
