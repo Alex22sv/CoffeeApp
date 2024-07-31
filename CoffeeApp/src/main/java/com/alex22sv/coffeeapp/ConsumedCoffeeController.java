@@ -63,15 +63,17 @@ public class ConsumedCoffeeController extends Controller{
         consumedCoffeeNameColumn.setCellValueFactory(new PropertyValueFactory<>("consumedCoffeeName"));
         consumedCoffeeBrandColumn.setCellValueFactory(new PropertyValueFactory<>("consumedCoffeeBrand"));
         consumedCoffeeDateColumn.setCellValueFactory(new PropertyValueFactory<>("consumedCoffeeDate"));
+        // Coffee brands
+        updateCoffeeBrandOptions();
+        updateConsumedCoffeeBrand.setValue("None");
         // Database info
         databaseUsername.setText("User: " + Config.USERNAME.value);
         databaseServer.setText("Server: " + Config.SERVER.value);
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Coffee brands
-        updateCoffeeBrandOptions();
-        updateConsumedCoffeeBrand.setValue("None");
+        // Audit log
+        Utilities.logAction(AuditLogAction.OPENED_CONSUMED_COFFEE);
         // Update table
         updateTable();
     }

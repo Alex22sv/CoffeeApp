@@ -56,7 +56,9 @@ public class CoffeeBrandController extends Controller {
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Update table
+        // Audit log
+        Utilities.logAction(AuditLogAction.OPENED_COFFEE_BRAND);
+        // Update table view
         updateTable();
     }
     // Add coffee brand
