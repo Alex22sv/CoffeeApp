@@ -10,4 +10,6 @@ module com.alex22sv.coffeeapp {
     exports com.alex22sv.coffeeapp;
     exports com.alex22sv.coffeeapp.Classes;
     opens com.alex22sv.coffeeapp.Classes to javafx.fxml;
+    exports com.alex22sv.coffeeapp.Enums;
+    opens com.alex22sv.coffeeapp.Enums to javafx.fxml;
 }

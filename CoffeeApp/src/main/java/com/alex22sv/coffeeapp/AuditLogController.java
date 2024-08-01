@@ -1,6 +1,8 @@
 package com.alex22sv.coffeeapp;
 
 import com.alex22sv.coffeeapp.Classes.*;
+import com.alex22sv.coffeeapp.Enums.AuditLogAction;
+import com.alex22sv.coffeeapp.Enums.Config;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
