@@ -61,7 +61,7 @@ public class AuditLogController extends Controller {
             auditLogTableView.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM AuditLog");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM AuditLog ORDER BY auditLogId DESC");
             while(resultSet.next()){
                 auditLogTableView.getItems().add(new AuditLog(resultSet.getInt("auditLogId"), resultSet.getString("action"), resultSet.getString("user"), resultSet.getString("date")));
             }
