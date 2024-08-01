@@ -1,9 +1,8 @@
 package com.alex22sv.coffeeapp;
 
-import com.alex22sv.coffeeapp.Classes.Config;
+import com.alex22sv.coffeeapp.Enums.Config;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 public class MainMenuController extends Controller {
     // Database info

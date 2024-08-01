@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -27,11 +29,6 @@
       <Label fx:id="databaseName" layoutX="865.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Database: -">
          <font>
             <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Welcome!" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-         <font>
-            <Font size="42.0" />
          </font>
       </Label>
       <Label fx:id="appVersion" layoutX="14.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="V1.0.0" textFill="WHITE">
@@ -74,5 +71,40 @@
             <Font size="22.0" />
          </font>
       </Button>
+      <ImageView fitHeight="418.0" fitWidth="641.0" layoutX="578.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/coffee.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="479.0" layoutY="542.0" prefHeight="62.0" prefWidth="544.0" text="Be amazing today." textAlignment="CENTER" textFill="#797979" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="38.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="479.0" layoutY="604.0" prefHeight="62.0" prefWidth="544.0" text="But first..." textAlignment="CENTER" textFill="#797979" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="38.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="479.0" layoutY="666.0" prefHeight="62.0" prefWidth="544.0" text="Coffee." textAlignment="CENTER" textFill="#797979" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="38.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="79.0" fitWidth="150.0" layoutX="448.0" layoutY="525.0" opacity="0.31" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/quote.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="150.0" layoutX="897.0" layoutY="658.0" opacity="0.31" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@imgs/quote.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="-8.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Welcome!" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

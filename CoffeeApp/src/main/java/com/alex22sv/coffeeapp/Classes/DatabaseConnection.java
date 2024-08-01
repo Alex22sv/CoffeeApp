@@ -1,5 +1,7 @@
 package com.alex22sv.coffeeapp.Classes;
 
+import com.alex22sv.coffeeapp.Enums.Config;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

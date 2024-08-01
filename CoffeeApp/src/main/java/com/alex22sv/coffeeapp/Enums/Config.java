@@ -1,4 +1,4 @@
-package com.alex22sv.coffeeapp.Classes;
+package com.alex22sv.coffeeapp.Enums;
 
 public enum Config {
     DRIVER("jdbc"),

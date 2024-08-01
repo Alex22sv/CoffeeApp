@@ -1,6 +1,8 @@
 package com.alex22sv.coffeeapp;
 
 import com.alex22sv.coffeeapp.Classes.*;
+import com.alex22sv.coffeeapp.Enums.AuditLogAction;
+import com.alex22sv.coffeeapp.Enums.Config;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -59,7 +61,7 @@ public class AuditLogController extends Controller {
             auditLogTableView.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM AuditLog");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM AuditLog ORDER BY auditLogId DESC");
             while(resultSet.next()){
                 auditLogTableView.getItems().add(new AuditLog(resultSet.getInt("auditLogId"), resultSet.getString("action"), resultSet.getString("user"), resultSet.getString("date")));
             }
