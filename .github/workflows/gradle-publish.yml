@@ -37,12 +37,12 @@ jobs:
       uses: gradle/actions/setup-gradle@dbbdc275be76ac10734476cc723d82dfe7ec6eda # v3.4.2
 
     - name: Build with Gradle
-      run: ././gradlew build
+      run: ./CoffeeApp/gradlew build
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      run: ././gradlew publish
+      run: ./CoffeeApp/gradlew publish
       env:
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
