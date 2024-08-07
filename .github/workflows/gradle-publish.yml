@@ -30,19 +30,25 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
-
+        server-id: github
+        settings-path: ${{ github.workspace }}
+        
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@dbbdc275be76ac10734476cc723d82dfe7ec6eda # v3.4.2
+      uses: gradle/actions/setup-gradle@dbbdc275be76ac10734476cc723d82dfe7ec6eda
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./CoffeeApp/gradlew
+
+    - name: Verify gradlew presence
+      run: ls -la ./CoffeeApp
 
     - name: Build with Gradle
       run: ./CoffeeApp/gradlew build
+      working-directory: ./CoffeeApp
 
-    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
-    # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
       run: ./CoffeeApp/gradlew publish
+      working-directory: ./CoffeeApp
       env:
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
