@@ -7,6 +7,7 @@ public enum AuditLogAction {
     // Open pages
     OPENED_CONSUMED_COFFEE,
     OPENED_COFFEE_BRAND,
+    OPENED_DOWNLOAD_DATABASE,
     OPENED_AUDIT_LOG,
     // Consumed Coffee
     ADDED_CONSUMED_COFFEE,

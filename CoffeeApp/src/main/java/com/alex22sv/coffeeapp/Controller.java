@@ -34,7 +34,7 @@ public class Controller {
     }
     @FXML
     private void openDownloadDB(ActionEvent event){
-
+        changeScene(event, "downloadDatabase.fxml", "Coffee App - Download Database");
     }
     @FXML
     private void openAuditLog(ActionEvent event){
