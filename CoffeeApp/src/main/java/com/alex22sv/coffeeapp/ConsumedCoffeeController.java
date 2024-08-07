@@ -67,7 +67,7 @@ public class ConsumedCoffeeController extends Controller{
         consumedCoffeeDateColumn.setCellValueFactory(new PropertyValueFactory<>("consumedCoffeeDate"));
         // Coffee brands
         updateCoffeeBrandOptions();
-        updateConsumedCoffeeBrand.setValue("None");
+        updateConsumedCoffeeBrand.setValue("Unknown");
         // Database info
         databaseUsername.setText("User: " + Config.USERNAME.value);
         databaseServer.setText("Server: " + Config.SERVER.value);
@@ -89,16 +89,16 @@ public class ConsumedCoffeeController extends Controller{
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM CoffeeBrand");
             while(resultSet.next()){
-                if(!resultSet.getString("coffeeBrandName").toLowerCase().equals("none")){
+                if(!resultSet.getString("coffeeBrandName").toLowerCase().equals("unknown")){
                     addConsumedCoffeeBrand.getItems().add(resultSet.getString("coffeeBrandName"));
                     updateConsumedCoffeeBrand.getItems().add(resultSet.getString("coffeeBrandName"));
                 }
 
             }
-            addConsumedCoffeeBrand.getItems().add("None");
-            updateConsumedCoffeeBrand.getItems().add("None");
-            addConsumedCoffeeBrand.setValue("None");
-            updateConsumedCoffeeBrand.setValue("None");
+            addConsumedCoffeeBrand.getItems().add("Unknown");
+            updateConsumedCoffeeBrand.getItems().add("Unknown");
+            addConsumedCoffeeBrand.setValue("Unknown");
+            updateConsumedCoffeeBrand.setValue("Unknown");
             connection.close();
         } catch(SQLException e){
             e.printStackTrace();
@@ -112,7 +112,7 @@ public class ConsumedCoffeeController extends Controller{
             try{
                 Connection connection = DatabaseConnection.getConnection();
                 Integer coffeeBrandId = null;
-                if((!addConsumedCoffeeBrand.getValue().toLowerCase().equals("none"))){
+                if((!addConsumedCoffeeBrand.getValue().toLowerCase().equals("unknown"))){
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("SELECT coffeeBrandId FROM CoffeeBrand WHERE coffeeBrandName = '" + addConsumedCoffeeBrand.getValue() + "'");
                     resultSet.next();
@@ -120,7 +120,7 @@ public class ConsumedCoffeeController extends Controller{
                 }
                 PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ConsumedCoffee (`coffeeName`, `coffeeBrandId`, `consumedCoffeeDate`) VALUES (?, ?, ?)");
                 preparedStatement.setString(1, addConsumedCoffeeName.getText());
-                if(addConsumedCoffeeBrand.getValue().toLowerCase().equals("none")){
+                if(addConsumedCoffeeBrand.getValue().toLowerCase().equals("unknown")){
                     preparedStatement.setNull(2, Types.INTEGER);
                 } else {
                     preparedStatement.setInt(2, coffeeBrandId);
@@ -129,7 +129,7 @@ public class ConsumedCoffeeController extends Controller{
                 preparedStatement.executeUpdate();
                 // Clear items
                 addConsumedCoffeeName.clear();
-                addConsumedCoffeeBrand.setValue("None");
+                addConsumedCoffeeBrand.setValue("Unknown");
                 addConsumedCoffeeDate.setValue(null);
                 connection.close();
                 updateTable();
@@ -157,7 +157,7 @@ public class ConsumedCoffeeController extends Controller{
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM ConsumedCoffee WHERE consumedCoffeeId = " + updateConsumedCoffeeId.getText());
                     if(resultSet.next()){
-                        String coffeeBrandName = "None";
+                        String coffeeBrandName = "Unknown";
                         if(resultSet.getString("coffeeBrandId")!=null){
                             Statement statement1 = connection.createStatement();
                             ResultSet resultSet1 = statement1.executeQuery("SELECT coffeeBrandName FROM CoffeeBrand WHERE coffeeBrandId = " + resultSet.getInt("coffeeBrandId"));
@@ -191,7 +191,7 @@ public class ConsumedCoffeeController extends Controller{
                if(Utilities.existsConsumedCoffee(Integer.valueOf(updateConsumedCoffeeId.getText()))){
                    Connection connection = DatabaseConnection.getConnection();
                    Integer coffeeBrandId = null;
-                   if((!updateConsumedCoffeeBrand.getValue().toLowerCase().equals("none"))){
+                   if((!updateConsumedCoffeeBrand.getValue().toLowerCase().equals("unknown"))){
                        Statement statement = connection.createStatement();
                        ResultSet resultSet = statement.executeQuery("SELECT coffeeBrandId FROM CoffeeBrand WHERE coffeeBrandName = '" + updateConsumedCoffeeBrand.getValue() + "'");
                        resultSet.next();
@@ -199,7 +199,7 @@ public class ConsumedCoffeeController extends Controller{
                    }
                    PreparedStatement preparedStatement = connection.prepareStatement("UPDATE ConsumedCoffee SET coffeeName = ?, coffeeBrandId = ?, consumedCoffeeDate = ? WHERE consumedCoffeeId = ?");
                    preparedStatement.setString(1, updateConsumedCoffeeName.getText());
-                   if(updateConsumedCoffeeBrand.getValue().toLowerCase().equals("none")){
+                   if(updateConsumedCoffeeBrand.getValue().toLowerCase().equals("unknown")){
                        preparedStatement.setNull(2, Types.INTEGER);
                    } else {
                        preparedStatement.setInt(2, coffeeBrandId);
@@ -210,7 +210,7 @@ public class ConsumedCoffeeController extends Controller{
                    // Clear items
                    updateConsumedCoffeeId.clear();
                    updateConsumedCoffeeName.clear();
-                   updateConsumedCoffeeBrand.setValue("None");
+                   updateConsumedCoffeeBrand.setValue("Unknown");
                    updateConsumedCoffeeDate.setValue(null);
                    connection.close();
                    updateTable();
@@ -277,7 +277,7 @@ public class ConsumedCoffeeController extends Controller{
                         consumedCoffeeTableView.getItems().add(new ConsumedCoffee(resultSet.getInt("consumedCoffeeId"), resultSet.getString("coffeeName"), resultSet1.getString("coffeeBrandName"), resultSet.getString("consumedCoffeeDate")));
                     }
                 } else {
-                    consumedCoffeeTableView.getItems().add(new ConsumedCoffee(resultSet.getInt("consumedCoffeeId"), resultSet.getString("coffeeName"), "None", resultSet.getString("consumedCoffeeDate")));
+                    consumedCoffeeTableView.getItems().add(new ConsumedCoffee(resultSet.getInt("consumedCoffeeId"), resultSet.getString("coffeeName"), "Unknown", resultSet.getString("consumedCoffeeDate")));
                 }
             }
             connection.close();
