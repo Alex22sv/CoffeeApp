@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'maven-publish'
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
@@ -12,7 +13,9 @@ version '1.0.3'
 ext {
     junitVersion = '5.10.0'
 }
-
+repositories {
+    mavenCentral()
+}
 sourceCompatibility = '21'
 targetCompatibility = '21'
 
@@ -52,22 +55,4 @@ jlink {
 
 jlinkZip {
     group = 'distribution'
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Alex22sv/CoffeeApp")
-            credentials {
-                username = project.findProperty("gpr.user") ?: secrets.GITHUB_TOKEN
-                password = project.findProperty("gpr.token") ?: secrets.TOKEN
-            }
-        }
-    }
 }
