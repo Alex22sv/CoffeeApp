@@ -13,7 +13,9 @@ version '1.0.3'
 ext {
     junitVersion = '5.10.0'
 }
-
+repositories {
+    mavenCentral()
+}
 sourceCompatibility = '21'
 targetCompatibility = '21'
 
@@ -53,22 +55,4 @@ jlink {
 
 jlinkZip {
     group = 'distribution'
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Alex22sv/CoffeeApp")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN")
-            }
-        }
-    }
 }
