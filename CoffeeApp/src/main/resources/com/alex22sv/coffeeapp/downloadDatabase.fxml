@@ -84,5 +84,8 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="downloadConsumedCoffeesButton" layoutX="317.0" layoutY="204.0" mnemonicParsing="false" onAction="#downloadConsumedCoffees" text="Download 'Consumed Coffees'" />
+      <Button fx:id="downloadCoffeeBrandsButton" layoutX="611.0" layoutY="204.0" mnemonicParsing="false" onAction="#downloadCoffeeBrands" text="Download 'Coffee Brands'" />
+      <Button fx:id="downloadPreparationMethodsButton" layoutX="877.0" layoutY="204.0" mnemonicParsing="false" onAction="#downloadPreparationMethods" text="Download 'Preparation Methods'" />
     </children>
 </Pane>
