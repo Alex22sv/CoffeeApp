@@ -14,13 +14,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.CoffeeBrandController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.PreparationMethodController">
     <children>
         <HBox layoutX="298.0" layoutY="91.0" prefHeight="274.0" prefWidth="881.0">
             <children>
                 <VBox prefHeight="271.0" prefWidth="293.0" style="-fx-border-color: BLACK;">
                     <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Add new coffee brand" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Add new prep. method" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
@@ -28,12 +28,12 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField fx:id="addCoffeeBrandName" promptText="Name">
+                        <TextField fx:id="addPreparationMethodName" promptText="Name">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </TextField>
-                        <Button fx:id="addCoffeeBrandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addCoffeeBrand" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Add" textAlignment="CENTER">
+                        <Button fx:id="addPreparationMethodButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addPreparationMethod" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Add" textAlignment="CENTER">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -47,7 +47,7 @@
                     </HBox.margin></VBox>
                 <VBox prefHeight="274.0" prefWidth="293.0" style="-fx-border-color: BLACK;">
                     <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Update coffee brand" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Update prep. method" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
@@ -55,12 +55,12 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField fx:id="updateCoffeeBrandId" promptText="Coffee brand ID">
+                        <TextField fx:id="updatePreparationMethodId" promptText="Preparation method ID">
                             <VBox.margin>
                                 <Insets bottom="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <Button fx:id="updateCoffeeBrandIdButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateCoffeeBrandGetOldValues" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Get old info" textAlignment="CENTER">
+                        <Button fx:id="updatePreparationMethodIdButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updatePreparationMethodGetOldValues" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Get old info" textAlignment="CENTER">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -68,12 +68,12 @@
                                 <Insets bottom="30.0" left="100.0" />
                             </VBox.margin>
                         </Button>
-                        <TextField fx:id="updateCoffeeBrandName" promptText="Name">
+                        <TextField fx:id="updatePreparationMethodName" promptText="Name">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </TextField>
-                        <Button fx:id="updateCoffeeBrandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateCoffeeBrand" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Update" textAlignment="CENTER">
+                        <Button fx:id="updatePreparationMethodButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updatePreparationMethod" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Update" textAlignment="CENTER">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -84,7 +84,7 @@
                     </children></VBox>
                 <VBox prefHeight="274.0" prefWidth="293.0" style="-fx-border-color: BLACK;">
                     <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Delete coffee brand" textAlignment="CENTER">
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="293.0" text="Delete prep. method" textAlignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
@@ -92,12 +92,12 @@
                                 <Insets bottom="10.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField fx:id="deleteCoffeeBrandId" promptText="Coffee brand ID">
+                        <TextField fx:id="deletePreparationMethodId" promptText="Preparation method ID">
                             <VBox.margin>
                                 <Insets bottom="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <Button fx:id="deleteCoffeeBrandButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteCoffeeBrand" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Delete" textAlignment="CENTER">
+                        <Button fx:id="deletePreparationMethodButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deletePreparationMethod" prefHeight="24.0" prefWidth="100.0" style="-fx-content-display: CENTER;" text="Delete" textAlignment="CENTER">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -134,7 +134,7 @@
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Coffee Brands" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Preparation Methods" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
             <font>
                 <Font size="42.0" />
             </font>
@@ -179,19 +179,19 @@
                 <Font size="22.0" />
             </font>
         </Button>
-      <ScrollPane layoutX="295.0" layoutY="376.0" prefHeight="379.0" prefWidth="881.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="875.0">
-               <children>
-                    <TableView fx:id="coffeeBrandTableView" prefHeight="379.0" prefWidth="881.0">
-                        <columns>
-                            <TableColumn fx:id="coffeeBrandIdColumn" prefWidth="75.0" text="ID" />
-                            <TableColumn fx:id="coffeeBrandNameColumn" prefWidth="804.0" text="Name" />
-                        </columns>
-                    </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+        <ScrollPane layoutX="295.0" layoutY="376.0" prefHeight="379.0" prefWidth="881.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="875.0">
+                    <children>
+                        <TableView fx:id="preparationMethodTableView" prefHeight="379.0" prefWidth="881.0">
+                            <columns>
+                                <TableColumn fx:id="preparationMethodIdColumn" prefWidth="75.0" text="ID" />
+                                <TableColumn fx:id="preparationMethodNameColumn" prefWidth="804.0" text="Name" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
     </children>
 </Pane>

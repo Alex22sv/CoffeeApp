@@ -25,6 +25,10 @@ public class Controller {
         changeScene(event, "coffeeBrand.fxml", "Coffee App - Coffee Brands");
     }
     @FXML
+    private void openPreparationMethod(ActionEvent event){
+        changeScene(event, "preparationMethod.fxml", "Coffee App - Preparation Methods");
+    }
+    @FXML
     private void openMonthlyReport(ActionEvent event){
 
     }

@@ -43,37 +43,42 @@
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="104.0" mnemonicParsing="false" onAction="#openMainMenu" style="-fx-background-color: none;" text="Home" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="95.0" layoutY="104.0" mnemonicParsing="false" onAction="#openMainMenu" style="-fx-background-color: none;" text="Home" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="144.0" mnemonicParsing="false" onAction="#openConsumedCoffees" style="-fx-background-color: none;" text="Consumed Coffees" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="144.0" mnemonicParsing="false" onAction="#openConsumedCoffees" style="-fx-background-color: none;" text="Consumed Coffees" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="184.0" mnemonicParsing="false" onAction="#openCoffeeBrands" style="-fx-background-color: none;" text="Coffee Brands" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="184.0" mnemonicParsing="false" onAction="#openCoffeeBrands" style="-fx-background-color: none;" text="Coffee Brands" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="224.0" mnemonicParsing="false" onAction="#openMonthlyReport" style="-fx-background-color: none;" text="Monthly report" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="224.0" mnemonicParsing="false" onAction="#openPreparationMethod" style="-fx-background-color: none;" text="Preparation methods" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="264.0" mnemonicParsing="false" onAction="#openYearlyReport" style="-fx-background-color: none;" text="Yearly report" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="264.0" mnemonicParsing="false" onAction="#openMonthlyReport" style="-fx-background-color: none;" text="Monthly report" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="304.0" mnemonicParsing="false" onAction="#openDownloadDB" style="-fx-background-color: none;" text="Download" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="304.0" mnemonicParsing="false" onAction="#openYearlyReport" style="-fx-background-color: none;" text="Yearly report" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="344.0" mnemonicParsing="false" onAction="#openAuditLog" style="-fx-background-color: none;" text="Audit log" textFill="WHITE">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="344.0" mnemonicParsing="false" onAction="#openDownloadDB" style="-fx-background-color: none;" text="Download" textFill="WHITE">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="384.0" mnemonicParsing="false" onAction="#openAuditLog" style="-fx-background-color: none;" text="Audit log" textFill="WHITE">
             <font>
                 <Font size="22.0" />
             </font>

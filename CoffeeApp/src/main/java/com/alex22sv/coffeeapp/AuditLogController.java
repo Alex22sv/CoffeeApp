@@ -50,8 +50,8 @@ public class AuditLogController extends Controller {
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Audit log
-        Utilities.logAction(AuditLogAction.OPENED_AUDIT_LOG);
+        /*// Audit log
+        Utilities.logAction(AuditLogAction.OPENED_AUDIT_LOG);*/
         // Update table view
         updateTable();
     }
