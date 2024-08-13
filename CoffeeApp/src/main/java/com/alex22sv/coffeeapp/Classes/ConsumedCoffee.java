@@ -4,12 +4,14 @@ public class ConsumedCoffee {
     private Integer consumedCoffeeId;
     private String consumedCoffeeName;
     private String consumedCoffeeBrand;
+    private String consumedCoffeePreparationMethod;
     private String consumedCoffeeDate;
 
-    public ConsumedCoffee(Integer consumedCoffeeId, String consumedCoffeeName, String consumedCoffeeBrand, String consumedCoffeeDate) {
+    public ConsumedCoffee(Integer consumedCoffeeId, String consumedCoffeeName, String consumedCoffeeBrand, String consumedCoffeePreparationMethod, String consumedCoffeeDate) {
         this.consumedCoffeeId = consumedCoffeeId;
         this.consumedCoffeeName = consumedCoffeeName;
         this.consumedCoffeeBrand = consumedCoffeeBrand;
+        this.consumedCoffeePreparationMethod = consumedCoffeePreparationMethod;
         this.consumedCoffeeDate = consumedCoffeeDate;
     }
 
@@ -35,6 +37,14 @@ public class ConsumedCoffee {
 
     public void setConsumedCoffeeBrand(String consumedCoffeeBrand) {
         this.consumedCoffeeBrand = consumedCoffeeBrand;
+    }
+    
+    public String getConsumedCoffeePreparationMethod(){
+        return consumedCoffeePreparationMethod;
+    }
+    
+    public void setConsumedCoffeePreparationMethod(String consumedCoffeePreparationMethod){
+        this.consumedCoffeePreparationMethod = consumedCoffeePreparationMethod;
     }
 
     public String getConsumedCoffeeDate() {

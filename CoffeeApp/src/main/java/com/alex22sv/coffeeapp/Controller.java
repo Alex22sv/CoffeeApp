@@ -25,6 +25,10 @@ public class Controller {
         changeScene(event, "coffeeBrand.fxml", "Coffee App - Coffee Brands");
     }
     @FXML
+    private void openPreparationMethod(ActionEvent event){
+        changeScene(event, "preparationMethod.fxml", "Coffee App - Preparation Methods");
+    }
+    @FXML
     private void openMonthlyReport(ActionEvent event){
 
     }
@@ -34,7 +38,7 @@ public class Controller {
     }
     @FXML
     private void openDownloadDB(ActionEvent event){
-
+        changeScene(event, "downloadDatabase.fxml", "Coffee App - Download Database");
     }
     @FXML
     private void openAuditLog(ActionEvent event){

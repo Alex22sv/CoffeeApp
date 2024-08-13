@@ -58,14 +58,14 @@ public class CoffeeBrandController extends Controller {
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Audit log
-        Utilities.logAction(AuditLogAction.OPENED_COFFEE_BRAND);
+        /*// Audit log
+        Utilities.logAction(AuditLogAction.OPENED_COFFEE_BRAND);*/
         // Update table view
         updateTable();
     }
     // Add coffee brand
     @FXML
-    private void addCoffeeBrand(){
+    public void addCoffeeBrand(){
         if(!addCoffeeBrandName.getText().isEmpty()){
             try{
                 Connection connection = DatabaseConnection.getConnection();
@@ -91,7 +91,7 @@ public class CoffeeBrandController extends Controller {
     }
     // Update coffee brand
     @FXML
-    private void updateCoffeeBrandGetOldValues(){
+    public void updateCoffeeBrandGetOldValues(){
         if(!updateCoffeeBrandId.getText().isEmpty()){
             try {
                 if(Utilities.existsCoffeeBrand(Integer.valueOf(updateCoffeeBrandId.getText()))){
@@ -116,7 +116,7 @@ public class CoffeeBrandController extends Controller {
         }
     }
     @FXML
-    private void updateCoffeeBrand(){
+    public void updateCoffeeBrand(){
         if((!updateCoffeeBrandId.getText().isEmpty()) && (!updateCoffeeBrandName.getText().isEmpty())){
             try {
                 if(Utilities.existsCoffeeBrand(Integer.valueOf(updateCoffeeBrandId.getText()))){
@@ -147,7 +147,7 @@ public class CoffeeBrandController extends Controller {
     }
     // Delete coffee brand
     @FXML
-    private void deleteCoffeeBrand(){
+    public void deleteCoffeeBrand(){
         if(!deleteCoffeeBrandId.getText().isEmpty()){
             try {
                 if(Utilities.existsCoffeeBrand(Integer.valueOf(deleteCoffeeBrandId.getText()))){
@@ -177,7 +177,7 @@ public class CoffeeBrandController extends Controller {
     }
     // Update table
     @FXML
-    private void updateTable(){
+    public void updateTable(){
         try {
             coffeeBrandTableView.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();

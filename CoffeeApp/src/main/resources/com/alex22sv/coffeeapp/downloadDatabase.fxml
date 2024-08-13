@@ -2,15 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.AuditLogController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alex22sv.coffeeapp.DownloadDBController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e42a6" height="799.0" stroke="BLACK" strokeType="INSIDE" width="271.0" />
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="9.0" prefHeight="62.0" prefWidth="230.0" text="Coffee App" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
@@ -31,11 +27,6 @@
         <Label fx:id="databaseName" layoutX="865.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="Database: -">
             <font>
                 <Font size="18.0" />
-            </font>
-        </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Audit Log" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-            <font>
-                <Font size="42.0" />
             </font>
         </Label>
         <Label fx:id="appVersion" layoutX="14.0" layoutY="763.0" prefHeight="29.0" prefWidth="197.0" text="V1.0.0" textFill="WHITE">
@@ -83,21 +74,15 @@
                 <Font size="22.0" />
             </font>
         </Button>
-      <ScrollPane layoutX="298.0" layoutY="91.0" prefHeight="600.0" prefWidth="881.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <TableView fx:id="auditLogTableView" prefHeight="600.0" prefWidth="881.0">
-                    <columns>
-                      <TableColumn fx:id="auditLogIdColumn" prefWidth="75.0" text="#" />
-                      <TableColumn fx:id="auditLogActionColumn" prefWidth="337.0" text="Action" />
-                        <TableColumn fx:id="auditLogUserColumn" prefWidth="213.0" text="User" />
-                        <TableColumn fx:id="auditLogDateColumn" prefWidth="255.0" text="Date" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="-8.0" prefHeight="79.0" prefWidth="929.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;" text="Download database" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="42.0" />
+            </font>
+        </Label>
+      <Label alignment="TOP_LEFT" layoutX="299.0" layoutY="104.0" prefHeight="79.0" prefWidth="851.0" text="This section allows you to download a backup of the database to your local device. This feature should only be used as a backup system and not to be shared to other users. The database contains sensitive/private information." wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
     </children>
 </Pane>
