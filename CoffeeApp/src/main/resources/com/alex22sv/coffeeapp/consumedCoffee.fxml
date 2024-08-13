@@ -26,9 +26,9 @@
                     <columns>
                       <TableColumn fx:id="consumedCoffeeIdColumn" prefWidth="58.0" text="ID" />
                       <TableColumn fx:id="consumedCoffeeNameColumn" prefWidth="246.0" text="Name" />
-                        <TableColumn fx:id="consumedCoffeeBrandColumn" minWidth="0.0" prefWidth="200.0" text="Coffee Brand" />
-                        <TableColumn fx:id="consumedCoffeePreparationMethodColumn" maxWidth="212.0" prefWidth="212.0" text="Preparation method" />
-                        <TableColumn fx:id="consumedCoffeeDateColumn" prefWidth="148.0" text="Date" />
+                        <TableColumn fx:id="consumedCoffeeBrandColumn" minWidth="0.0" prefWidth="250.0" text="Coffee Brand" />
+                        <TableColumn fx:id="consumedCoffeePreparationMethodColumn" maxWidth="232.0" prefWidth="182.0" text="Preparation method" />
+                        <TableColumn fx:id="consumedCoffeeDateColumn" prefWidth="128.0" text="Date" />
                     </columns>
                   </TableView>
                </children>
