@@ -28,7 +28,7 @@ public class DownloadDBController extends Controller {
         databaseName.setText("Database: " + Config.DATABASE.value);
         // App version
         appVersion.setText(Config.APP_VERSION.value);
-        // Audit log
-        Utilities.logAction(AuditLogAction.OPENED_DOWNLOAD_DATABASE);
+        /*// Audit log
+        Utilities.logAction(AuditLogAction.OPENED_DOWNLOAD_DATABASE);*/
     }
 }
