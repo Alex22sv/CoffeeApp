@@ -8,7 +8,7 @@ public enum Config {
     PASSWORD("Alex22sv"),
     SERVER("127.0.0.1"),
     DATABASE("CoffeeApp"),
-    APP_VERSION("v1.0.5");
+    APP_VERSION("v1.0.6");
 
     public final String value;
 

@@ -97,7 +97,7 @@ public class ConsumedCoffeeController extends Controller{
             updateConsumedCoffeeBrand.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM CoffeeBrand");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM CoffeeBrand ORDER BY coffeeBrandName ASC");
             while(resultSet.next()){
                 if(!resultSet.getString("coffeeBrandName").toLowerCase().equals("unknown")){
                     addConsumedCoffeeBrand.getItems().add(resultSet.getString("coffeeBrandName"));
@@ -123,7 +123,7 @@ public class ConsumedCoffeeController extends Controller{
             updateConsumedCoffeePreparationMethod.getItems().clear();
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM PreparationMethod");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM PreparationMethod ORDER BY preparationMethodName ASC");
             while(resultSet.next()){
                 if(!resultSet.getString("preparationMethodName").toLowerCase().equals("unknown")){
                     addConsumedCoffeePreparationMethod.getItems().add(resultSet.getString("preparationMethodName"));
