@@ -154,7 +154,7 @@ public class ConsumedCoffeeController extends Controller{
                     resultSet.next();
                      coffeeBrandId = resultSet.getInt("coffeeBrandId");
                 }
-                if((!addConsumedCoffeeBrand.getValue().toLowerCase().equals("unknown"))){
+                if((!addConsumedCoffeePreparationMethod.getValue().toLowerCase().equals("unknown"))){
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("SELECT preparationMethodId FROM PreparationMethod WHERE preparationMethodName = '" + addConsumedCoffeePreparationMethod.getValue() + "'");
                     resultSet.next();
